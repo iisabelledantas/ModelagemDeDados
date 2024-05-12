@@ -16,6 +16,8 @@
 
 ## Relacionamentos
 
+- A relação de users e feed_and_comunity é de 1:N 
+
 ## Regras de Negócio
 
 - Todos os campos obrigatórios devem ser preenchidos.
@@ -25,7 +27,7 @@
 
 ## Diagrama
 
-[Diagrama simplificado do modelo relacional (opcional)]
+
 
 ## Considerações Finais
 
