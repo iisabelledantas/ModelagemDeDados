@@ -249,7 +249,3 @@ ALTER TABLE `liked_contents` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`
 -- ('','');
 ```
 
-## Considerações Finais
-
-Este modelo relacional simplificado fornece uma base para o gerenciamento eficiente das informações dos usuários e suas respostas nos formulários do projeto Abandono Zero. As entidades, seus atributos e relacionamentos garantem a organização e a integridade dos dados. As regras de negócio garantem a consistência e a confiabilidade das informações.
-
