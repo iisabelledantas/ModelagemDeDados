@@ -28,7 +28,7 @@
 ## Arquivo em xml
 
 ```xml 
- <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
 <!-- Active URL: https://sql.toad.cz/ -->
 <sql>
@@ -65,7 +65,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="664" y="93" name="users">
+</datatypes><table x="599" y="122" name="users">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 </row>
@@ -78,14 +78,14 @@
 <row name="password" null="1" autoincrement="0">
 <datatype>VARCHAR(12)</datatype>
 <default>NULL</default></row>
-<row name="State" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="state" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="850" y="259" name="feed_and_comunity">
+<table x="806" y="307" name="feed_and_comunity">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -95,6 +95,9 @@
 </row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="likes" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="id_type_posts" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -116,7 +119,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="388" y="228" name="liked_contents">
+<table x="329" y="286" name="liked_contents">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -128,11 +131,14 @@
 <datatype>INTEGER</datatype>
 <relation table="users" row="id" />
 </row>
+<row name="liked" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="583" y="356" name="type_posts">
+<table x="569" y="450" name="type_posts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -144,6 +150,7 @@
 </key>
 </table>
 </sql>
+
 ```
 ## Arquivo em sql
 
