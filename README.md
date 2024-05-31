@@ -174,7 +174,7 @@ CREATE TABLE `users` (
   `name` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NULL DEFAULT NULL,
   `password` VARCHAR(12) NULL DEFAULT NULL,
-  `State` VARCHAR NULL DEFAULT NULL,
+  `state` VARCHAR(50) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -189,6 +189,7 @@ CREATE TABLE `feed_and_comunity` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `id_users` INTEGER NOT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
+  `likes` INTEGER NULL DEFAULT NULL,
   `id_type_posts` INTEGER NULL DEFAULT NULL,
   `project_title` VARCHAR(25) NULL DEFAULT NULL,
   `project_description` VARCHAR(250) NULL DEFAULT NULL,
@@ -208,6 +209,7 @@ CREATE TABLE `liked_contents` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `id_news_feed` INTEGER NULL DEFAULT NULL,
   `id_users` INTEGER NOT NULL,
+  `liked` BINARY NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -246,12 +248,12 @@ ALTER TABLE `liked_contents` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`
 -- Test Data
 -- ---
 
--- INSERT INTO `users` (`id`,`name`,`email`,`password`,`State`) VALUES
+-- INSERT INTO `users` (`id`,`name`,`email`,`password`,`state`) VALUES
 -- ('','','','','');
--- INSERT INTO `feed_and_comunity` (`id`,`id_users`,`created_at`,`id_type_posts`,`project_title`,`project_description`,`project_duration`,`project_volunteers_quantity`) VALUES
--- ('','','','','','','','');
--- INSERT INTO `liked_contents` (`id`,`id_news_feed`,`id_users`) VALUES
--- ('','','');
+-- INSERT INTO `feed_and_comunity` (`id`,`id_users`,`created_at`,`likes`,`id_type_posts`,`project_title`,`project_description`,`project_duration`,`project_volunteers_quantity`) VALUES
+-- ('','','','','','','','','');
+-- INSERT INTO `liked_contents` (`id`,`id_news_feed`,`id_users`,`liked`) VALUES
+-- ('','','','');
 -- INSERT INTO `type_posts` (`id`,`type_post`) VALUES
 -- ('','');
 ```
